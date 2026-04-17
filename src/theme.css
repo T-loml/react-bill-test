@@ -1,0 +1,19 @@
+:root:root {
+  /* Ant Design Mobile 主题变量 */
+  --adm-color-primary: #04cf64;
+  --adm-color-success: #a062d4;
+  --adm-color-warning: #ff8f1f;
+  --adm-color-danger: #ff3141;
+
+  /* 按钮相关颜色 */
+  --adm-button-primary-background-color: #a062d4;
+  --adm-button-primary-border-color: #a062d4;
+  --adm-button-primary-text-color: #ffffff;
+
+  /* 其他常用颜色变量 */
+  --adm-color-white: #ffffff;
+  --adm-color-text: #333333;
+  --adm-color-text-secondary: #666666;
+  --adm-color-border: #eeeeee;
+  --adm-color-fill: #f5f5f5;
+}
