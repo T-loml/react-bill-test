@@ -1,6 +1,6 @@
 import { TabBar } from "antd-mobile"
 import { useEffect } from "react"
-import { Outlet, useNavigate } from "react-router-dom"
+import { Outlet, useNavigate, useLocation } from "react-router-dom"
 import { useDispatch } from 'react-redux'
 import { getBillList } from "@/store/modules/billStore"
 import './index.scss'
@@ -31,6 +31,7 @@ const tabs = [
 const Layout = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const location = useLocation()  // 获取当前路由位置
   
   useEffect(() => {
     dispatch(getBillList())
@@ -46,7 +47,10 @@ const Layout = () => {
         <Outlet />
       </div>
       <div className="footer">
-        <TabBar onChange={handleChange}>
+        <TabBar 
+          onChange={handleChange}
+          activeKey={location.pathname}  // 设置当前激活的tab为当前路由路径
+        >
           {tabs.map(item => (
             <TabBar.Item key={item.key} icon={item.icon} title={item.title} />
           ))}

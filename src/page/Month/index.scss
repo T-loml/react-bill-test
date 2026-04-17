@@ -1,0 +1,19 @@
+.month-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+
+  .current-time {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+
+    .time-text {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+  }
+}
