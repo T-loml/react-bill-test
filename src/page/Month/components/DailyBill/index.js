@@ -71,7 +71,7 @@ const DailyBill = ({ date, billList }) => {
                 <div className="billType">{billTypeToName[item.useFor]}</div>
               </div>
               <div className={classNames("money", item.type)}>
-                {item.money.toFixed(2)}
+                {item.money?.toFixed(2)}
               </div>
             </div>
           );

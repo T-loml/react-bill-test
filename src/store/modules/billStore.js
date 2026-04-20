@@ -12,6 +12,16 @@ export const getBillList = () => {
     }
   };
 };
+export const addBillList = (data) => {
+  return async (dispacth) => {
+    try {
+      const response = await axios.post("http://localhost:8888/ka",data);
+      dispacth(addBill(response.data));
+    } catch (error) {
+      return console.log(error);
+    }
+  };
+};
 
 // 创建 slice
 const billStore = createSlice({
@@ -23,9 +33,12 @@ const billStore = createSlice({
     setBillList: (state, action) => {
       state.billList = action.payload;
     },
+    addBill: (state, action) => {
+      state.billList.push(action.payload);
+    },
   },
 });
 
 // 生成 action creators 和 reducer 函数
-export const { setBillList } = billStore.actions;
+export const { setBillList, addBill } = billStore.actions;
 export default billStore.reducer;
